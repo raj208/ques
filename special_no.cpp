@@ -1,19 +1,21 @@
 #include<iostream>
 using namespace std;
 
-// int fac(num){
-//     long fact
-// }
-
-int main(){
-    int num;
-    int factorial = 1.0;
-    cout<<"Enter a positive number"<<endl;
-    cin>>num;
+int num;
+int fac(num)
+{
+    long factorial = 1.0;
     for (int i = 1; i <= num; i++)
     {
         factorial *= i;
     }
-    cout<<factorial;
+    return factorial;
+}
+
+int main()
+{
+    cout<<"Enter a positive number"<<endl;
+    cin>>num;
+    cout<<fac<<endl;
     return 0;
 }
