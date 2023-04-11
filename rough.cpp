@@ -1,20 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-
-int num;
-
-int fac(int x){
-    long factorial = 1.0;
-    for (int i = 1; i <= x; i++)
+int main()
+{
+    int n, i, j, ctr, r;
+    cout << "\n\n Find frequency of each digit in a given integer:\n";
+    cout << "-----------------------------------------------------\n";
+    cout << " Input any number: ";
+    cin >> n;
+    for (i = 0; i < 10; i++) 
     {
-        factorial *= i;
+        cout << "The frequency of " << i << " = ";
+        ctr = 0;
+        for (j = n; j > 0; j = j / 10) 
+        {
+            r = j % 10;
+            if (r == i) 
+            {
+                ctr++;
+            }
+        }
+        cout << ctr << endl;
     }
-    
-    return(factorial);
-}
-int main(){
-    cout<<"Enter a positive number"<<endl;
-    cin>>num;
-    cout<<fac(num);
-    return 0;
 }
