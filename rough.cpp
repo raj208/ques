@@ -1,24 +1,24 @@
 #include <iostream>
 using namespace std;
-int main()
-{
-    int n, i, j, ctr, r;
-    cout << "\n\n Find frequency of each digit in a given integer:\n";
-    cout << "-----------------------------------------------------\n";
-    cout << " Input any number: ";
-    cin >> n;
-    for (i = 0; i < 10; i++) 
-    {
-        cout << "The frequency of " << i << " = ";
-        ctr = 0;
-        for (j = n; j > 0; j = j / 10) 
-        {
-            r = j % 10;
-            if (r == i) 
-            {
-                ctr++;
-            }
-        }
-        cout << ctr << endl;
+
+int main() {
+    int num, digit;
+    int frequency[10] = {0}; // initialize array with 0s
+    
+    cout << "Enter a number: ";
+    cin >> num;
+
+    while (num != 0) {
+        digit = num % 10; // extract the last digit
+        frequency[digit]++; // increment the count for that digit
+        num /= 10; // remove the last digit from the number
     }
+    
+    // print the frequency of digits
+    cout << "Frequency of digits:" << endl;
+    for (int i = 0; i < 10; i++) {
+        cout << i << " occurs " << frequency[i] << " times" << endl;
+    }
+    
+    return 0;
 }
