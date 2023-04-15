@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n; // number of elements
+    cout << "Enter the number of digit you want to sort" << endl;
+    cin >> n;
+
+    int arr[n]; // declare array with size n
+
+    // input elements of the array
+    cout << "Enter " << n << " elements: " << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    // sort the array in ascending order using Bubble Sort
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    // display the sorted array
+    // cout << "Sorted array: " << endl;
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cout << arr[i];
+    // }
+
+
+    //unique_no Algorithm
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] != arr[i + 1])
+        {
+            cout<<arr[i];
+        }
+        else{
+            continue;
+        }
+    }
+
+    return 0;
+}
