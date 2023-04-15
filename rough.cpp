@@ -1,22 +1,23 @@
-
-
-#include <iostream>
-
+#include<iostream>
 using namespace std;
 
-int main() {
-  int output[] = {1, 2, 3, 4, 5}; // example output
-  int outputArray[5]; // create empty array
 
-  for (int i = 0; i < 5; i++) {
-    outputArray[i] = output[i]; // assign each value to the corresponding element in the array
-  }
-
-  // output the array
-  for (int i = 0; i < 5; i++) {
-    cout << outputArray[i] << " ";
-  }
-  cout << endl;
-
-  return 0;
-}
+int main()  
+{  
+  int n, i, m=0, flag=0;  
+  cout << "Enter the Number to check Prime: ";  
+  cin >> n;  
+  m=n/2;  
+  for(i = 2; i <= m; i++)  
+  {  
+      if(n % i == 0)  
+      {  
+          cout<<"Number is not Prime."<<endl;  
+          flag=1;  
+          break;  
+      }  
+  }  
+  if (flag==0)  
+      cout << "Number is Prime."<<endl;  
+  return 0;  
+}  
