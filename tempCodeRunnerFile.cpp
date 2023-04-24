@@ -1,1 +1,2 @@
-WITHOUT USING "INT VALUE" ********
+
+    for (int i = 1; i <= column; i++)
