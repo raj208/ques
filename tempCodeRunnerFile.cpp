@@ -1,2 +1,2 @@
 
-        for (int m = 1; m <= i; m++)
+    int start = 0;
