@@ -1,60 +1,3 @@
-// #include<iostream>
-// using namespace std;
-
-// bool MountainValueCheck(int arr[], int size)
-// {
-//     int start1 = 0,  start2 = 0;
-//     for (int i = 0; i <= size; i++)
-//     {
-//         if (arr[i] <= arr[i+1])
-//         {
-//             i = start2;
-//             continue;
-//         }
-//         else if(arr[start2] >= arr[start2 + 1])
-//         {
-//             for (int j = start2; j < size; j++)
-//             {
-//                 if (arr[j] >= arr[j+1])
-//                 {
-//                     return 1;
-//                 }
-                
-//             }
-            
-//         }
-//     }
-//     return 0;
-    
-// }
-
-// int main()
-// {
-//     int size;
-//     cout<<"Enter the size of array"<<endl;
-//     cin>>size;
-
-//     int arr[size];
-//     cout<<"Enter the value of size"<<endl;
-//     for (int i = 0; i < size; i++)
-//     {
-//         cin>>arr[i];
-//     }
-    
-//     // MountainValueCheck(arr,size);
-//     if (MountainValueCheck(arr, size))
-//     {
-//         cout<<"Array is in Mountain structure";
-//     }
-//     else
-//     {
-//         cout<<"Array is not in mountain structure";
-//     }
-        
-    
-//     return 0;
-// }
-
 #include <iostream>
 using namespace std;
 
@@ -76,8 +19,16 @@ bool isMountain(int arr[], int n) {
 }
 
 int main() {
-    int arr[] = {1, 3, 5, 7, 9, 8, 6, 4, 2};
-    int n = sizeof(arr)/sizeof(arr[0]);
+    int n;
+    cout<<"Enter the size of array"<<endl;
+    cin>>n;
+
+    int arr[n];
+    cout<<"Enter the value of array"<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin>>arr[i];
+    }
     
     if (isMountain(arr, n)) {
         cout << "The array is a mountain.\n";

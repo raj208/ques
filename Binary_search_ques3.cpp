@@ -7,22 +7,21 @@
 #include<iostream>
 using namespace std;
 
-bool MountainValueCheck(int arr[], int size){
-    for (int i = 0; i < size; i++)
-    {
-        if (arr[i] < arr{i+1})
-        {
-            continue;
-        }
-        else if (arr )
-        {
-            /* code */
-        }
-        
-        
-    }
-    return 0;
+bool isMountain(int arr[], int size) {
+    int i = 0;
     
+    // Check if array is in increasing order
+    while (i < size-1 && arr[i] < arr[i+1]) {
+        i++;
+    }
+    
+    // Check if array is in decreasing order
+    while (i < size-1 && arr[i] > arr[i+1]) {
+        i++;
+    }
+    
+    // If array is a mountain
+    return (i == size-1);
 }
 
 int PeakValue(int arr[], int size){
@@ -48,13 +47,27 @@ int main(){
     cout<<"Enter the size of array"<<endl;
     cin>>size;
 
-    int arr[size];
-    cout<<"Enter the value of array"<<endl;
-    for (int i = 0; i < size; i++)
+    if (size < 3)
     {
-        cin>>arr[i];
+        cout<<"Size of array must more than 3"<<endl;
     }
-    int peak = PeakValue(arr, size);
-    cout<<"The index value of peak is "<<peak;
+    else
+    {
+        int arr[size];
+        cout<<"Enter the value of array"<<endl;
+        for (int i = 0; i < size; i++)
+        {
+            cin>>arr[i];
+        }
+        if (isMountain(arr,size))
+        {
+            int peak = PeakValue(arr,size);
+            cout<<"The index value of peak is "<<peak<<endl;
+        }
+        else{
+            cout<<"The value in array should be in a mountain format"<<endl;
+        }
+        
+    }
     return 0;
 }
