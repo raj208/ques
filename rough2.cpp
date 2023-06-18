@@ -1,35 +1,28 @@
-#include<iostream>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 
-int Sort(){
-    
-}
+int main() {
+    int rows = 3;
+    int columns = 3;
 
-int main()
-{
-    int num, r, c =0;
-    int a[100];
-    int a[100];
-    cout<<"enter a number"<<endl;
-    cin>>num;
-    for (int i = 0; i < 10 ; i++)
-    {
-        cout<<"The frequency of "<< i << " = ";
-        int freq = 0;       //error
-        for (int j = num ; j > 0; j /= 10)
-        {
-            r = j%10;
-            if (r == i)
-            {
-                freq++;
-            }
-            
+    // Create a matrix using a vector of vectors
+    vector<vector<int>> matrix(rows, vector<int>(columns));
+
+    // Assign values to the matrix
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            cin>>matrix[i][j];
         }
-        a[c++] = freq;
-        b[c] = freq;
-        cout<<freq<< endl;
     }
-    
+
+    // Print the matrix
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
     return 0;
 }
