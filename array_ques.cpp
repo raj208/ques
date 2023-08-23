@@ -11,6 +11,8 @@ int main(){
     int arr[row][column]; //row, column
     cout<<"Enter the value of array"<<endl;
 
+
+
     //taking input as row
     // for (int i = 0; i < row; i++)
     // {
